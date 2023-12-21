@@ -10,6 +10,7 @@ import (
 var RedisClient *redis.Client = ConnectRedis()
 
 func ConnectRedis() *redis.Client {
+
 	options := &redis.Options{
 		Addr:     GetEnv("REDIS_ADDR"),
 		Password: GetEnv("REDIS_PASSWORD"),

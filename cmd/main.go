@@ -6,8 +6,12 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func main() {
+func init() {
+	// Initialize MongoDB first
 	configs.ConnectDB()
+	configs.ConnectRedis()
+}
+func main() {
 	e := echo.New()
 	routes.UserRoute(e)
 	e.Logger.Fatal(e.Start(configs.GetEnv("BASE_URL")))
