@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	e := echo.New()
 	configs.ConnectDB()
+	e := echo.New()
 	routes.UserRoute(e)
 	e.Logger.Fatal(e.Start(configs.GetEnv("BASE_URL")))
 
