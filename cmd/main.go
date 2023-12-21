@@ -10,6 +10,6 @@ func main() {
 	e := echo.New()
 	configs.ConnectDB()
 	routes.UserRoute(e)
-	e.Logger.Fatal(e.Start(":6000"))
+	e.Logger.Fatal(e.Start(configs.GetEnv("BASE_URL")))
 
 }
