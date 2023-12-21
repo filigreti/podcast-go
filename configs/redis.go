@@ -20,7 +20,7 @@ func ConnectRedis() *redis.Client {
 	// Ping the Redis server to check the connection
 	pong, err := client.Ping(context.Background()).Result()
 	if err != nil {
-		// Print the error for debugging purposes, but don't return it
+		// Print the error for debuggings purposes, but don't return it
 		fmt.Println("Error connecting to Redis:", err)
 		return nil
 	}
